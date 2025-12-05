@@ -4142,7 +4142,7 @@ run(function()
 		DrawingSkeleton = function()
 			for ent, EntityESP in Reference do
 				if Distance.Enabled then
-					locand (entitylib.character.RootPart.Position - ent.RootPart.Position).Magnitude or math.huge
+					local distance = entitylib.isAlive and (entitylib.character.RootPart.Position - ent.RootPart.Position).Magnitude or math.huge
 					if distance < DistanceLimit.ValueMin or distance > DistanceLimit.ValueMax then
 						for _, obj in EntityESP do
 							obj.Visible = false
